@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: tbill-bfac-svc
+  namespace: bill
+spec:
+  selector:
+    app: tbill-bfac
+  
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: http
+  #   nodePort: 32180
+  # type: NodePort
+
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tbill-bfac-deploy
+  namespace: bill
+  
+  labels:
+    app: tbill-bfac
+
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tbill-bfac
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
+      labels:
+        app: tbill-bfac
+    
+    spec:
+      containers:
+        - name: tbill-bfac
+          image: nexus.dspace.kt.co.kr/argocd/tbill-bfac
+          ports:
+            - name: http
+              containerPort: 8080

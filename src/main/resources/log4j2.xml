@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+	<Properties>
+		<Property name="logFileName">ICIS-ODER-FILETOFILE</Property>
+		<Property name="consoleLayout">${logFileName} %X{globalNo} %d{HH:mm:ss.SSS} %-5level %c{1} : - %enc{%msg}{CRLF} %n%throwable</Property>
+	</Properties>
+
+
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${consoleLayout}" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<logger name="org.springframework" level="info" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="jdbc.audit" level="warn" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="org.apache.catalina" level="warn" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="com.zaxxer" level="warn" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="jdbc.connection" level="warn" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="org.apache.kafka" level="warn" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="org" level="error" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="io" level="error" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="_org" level="error" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+		<logger name="com.kt.icis" additivity="false" >
+			<AppenderRef ref="console" level="debug" />
+		</logger>
+		<logger name="Slf4jSpyLogDelegator" additivity="false" >
+			<AppenderRef ref="console" level="debug" />
+		</logger>
+		<logger name="jdbc.sqlonly" additivity="false" >
+			<AppenderRef ref="console" level="warn" />
+		</logger>
+		<logger name="jdbc.sqltiming" additivity="false" >
+			<AppenderRef ref="console" level="warn" />
+		</logger>
+		<logger name="jdbc.resultset" additivity="false" >
+			<AppenderRef ref="console" level="warn" />
+		</logger>
+		<logger name="jdbc.resultsettable" additivity="false" >
+			<AppenderRef ref="console" level="warn" />
+		</logger>
+		<logger name="test" additivity="false" >
+			<AppenderRef ref="console" level="info" />
+		</logger>
+
+		<root level="info">
+			<AppenderRef ref="console" />
+		</root>
+
+	</Loggers>
+</Configuration>

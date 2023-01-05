@@ -1,0 +1,9 @@
+target/
+logs/
+
+*.prefs
+*.class
+.project
+.factorypath
+.classpath
+.idea

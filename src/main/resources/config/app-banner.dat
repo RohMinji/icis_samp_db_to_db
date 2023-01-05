@@ -1,0 +1,11 @@
+  _____    _____   _____    _____            _______   _____  
+ |_   _|  / ____| |_   _|  / ____|          |__   __| |  __ \ 
+   | |   | |        | |   | (___    ______     | |    | |__) |
+   | |   | |        | |    \___ \  |______|    | |    |  _  / 
+  _| |_  | |____   _| |_   ____) |             | |    | | \ \ 
+ |_____|  \_____| |_____| |_____/              |_|    |_|  \_\
+                                                              
+                                                         
+
+:: ICIS-TR (version: ${app-info.build.version}, build-time: ${app-info.build.timestamp}) Powered by Spring Boot ${spring-boot.version} ::
+
