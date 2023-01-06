@@ -21,24 +21,7 @@
         <spring-cloud.version>2021.0.1</spring-cloud.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.kt.icis</groupId>
-            <artifactId>icis-batch-frwk</artifactId>
-            <version>1.0.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-devtools</artifactId>
-                </exclusion>
-            </exclusions>
-            <type>pom</type>
-        </dependency>
-    </dependencies>
+
 
     <dependencyManagement>
         <dependencies>
