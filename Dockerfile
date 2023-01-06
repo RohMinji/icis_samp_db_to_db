@@ -13,8 +13,7 @@ COPY src ./src
 
 COPY . ./
 
-RUN mvn clean install -DskipTests
-
+RUN mvn package
 ## 2)  Maven Wrapper Build
 
 #FROM ghcr.io/shclub/openjdk:17-alpine AS MAVEN_BUILD
