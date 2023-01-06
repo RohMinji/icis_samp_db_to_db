@@ -3,7 +3,7 @@
 #
 
 #### 1) Maven build
-FROM  ghcr.io/shclub/maven:3.8.4-openjdk-17 AS MAVEN_BUILD
+FROM  maven:3.8.4-openjdk-17 AS MAVEN_BUILD
 
 RUN mkdir -p build
 WORKDIR /build
@@ -12,7 +12,6 @@ COPY pom.xml ./
 COPY src ./src
 
 COPY . ./
-
 RUN mvn package
 ## 2)  Maven Wrapper Build
 
